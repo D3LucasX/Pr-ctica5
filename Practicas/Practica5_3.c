@@ -10,9 +10,9 @@ struct Productos{
 
 };
 int main(){
-	int cantidad_productos, i, reabastecer = 0, agregar_cant = 0;
+	int cantidad_productos, i, reabastecer = 0, agregar_cant = 0, encontrado = 0;
 	char nombre_producto[20];//Para almacenar el producto que escriba el usuario
-
+	char busqueda[20];
 
 	printf("Intrege la cantidad de productos que desea gestionar: \n");
 	scanf("%d", &cantidad_productos);
@@ -27,7 +27,8 @@ int main(){
 		printf("Producto %d\n", i + 1);
 
 		printf("Nombre: ");
-		scanf(" %s", Informatica[i].nombre);
+		scanf(" %[^\n]", Informatica[i].nombre); //Con %[^\n] permitimos introducir un nombre usando espacios, dejamos un espacio antes de 
+							 //'%' para evitar errores.
 
 		printf("Cantidad: ");
 		scanf(" %d",&Informatica[i].cantidad_stock);
@@ -44,15 +45,14 @@ int main(){
 		printf("Perfecto, hasta la proxima!\n"); // retornamos 1 si es distinto de 1, asi sale del programa.
 	}
 
-	while(reabastecer == 1){// podriamos hacer solo un bucle while, pero en este caso usamos un do while.
+	while(reabastecer == 1){ //Haacemos un bucle while y no un do while para que primero lea la condicion, antes que las instrucciones.
 
 		printf("¿Que producto quiere reabastecer?\n");
-		scanf(" %s", nombre_producto);
+		scanf(" %[^\n]", nombre_producto);
 
 		for(i = 0; i < cantidad_productos; i++){
 
 			if (strcmp(nombre_producto, Informatica[i].nombre) == 0) {
-				//Informatica[i].nombre = nombre_producto;
 				printf("Producto encontrado: %s - %d unidades en stock.\n", Informatica[i].nombre, Informatica[i].cantidad_stock);
 
 				printf("¿Que cantidad quiere añadir de %s?\n",Informatica[i].nombre);
@@ -78,10 +78,28 @@ int main(){
 		if(Informatica[i].cantidad_stock < EXIST_MIN){
 			printf("%s - %d unidades\n", Informatica[i].nombre, Informatica[i].cantidad_stock);
 		}
-	}
+	}	
 
-	return 0;
-}
+	printf("Introduzca el nombre del producto que quiere buscar.\n");
+	scanf(" %[^\n]", busqueda); //%[^\n], nos permite introducir un nombre usando espacios pero hay que dar un espacio antes del '%' para evitar posibles errores.
+	getchar(); //Con esto limpiamos el buffer de entrada para que lea lo que queremos que lea.
+
+	for(i = 0; i < cantidad_productos; i++){
+
+
+		if (strcmp(busqueda, Informatica[i].nombre) == 0) {
+			printf("Producto encontrado: %s - %d unidades en stock.\n", Informatica[i].nombre, Informatica[i].cantidad_stock);
+			encontrado = 1;
+
+		break;
+
+		}
+		}
+		if (!encontrado){	
+			printf("Lo sentiomos, ese producto no se encuentra en el sistema.\n");
+		}
+		return 0;
+	}
 
 
 

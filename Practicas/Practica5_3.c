@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #define PRODUCTO_MAX 10
+#define EXIST_MIN 5
 
 struct Productos{
 	char nombre[20];
@@ -11,7 +12,7 @@ struct Productos{
 int main(){
 	int cantidad_productos, i, reabastecer = 0, agregar_cant = 0;
 	char nombre_producto[20];//Para almacenar el producto que escriba el usuario
-	
+
 
 	printf("Intrege la cantidad de productos que desea gestionar: \n");
 	scanf("%d", &cantidad_productos);
@@ -37,56 +38,50 @@ int main(){
 		printf("Producto %d: %s - %d unidades\n", i + 1, Informatica[i].nombre, Informatica[i].cantidad_stock);
 	}
 
-			printf("Si desea reabastecer algún producto, pulse 1, si no pulse 2:\n");
-		scanf(" %d", &reabastecer);
-		do {
+	printf("Si desea reabastecer algún producto, pulse 1, si no pulse 2:\n");
+	scanf(" %d", &reabastecer);
+	if (reabastecer != 1){
+		printf("Perfecto, hasta la proxima!\n"); // retornamos 1 si es distinto de 1, asi sale del programa.
+	}
 
+	while(reabastecer == 1){// podriamos hacer solo un bucle while, pero en este caso usamos un do while.
+
+		printf("¿Que producto quiere reabastecer?\n");
+		scanf(" %s", nombre_producto);
 
 		for(i = 0; i < cantidad_productos; i++){
 
+			if (strcmp(nombre_producto, Informatica[i].nombre) == 0) {
+				//Informatica[i].nombre = nombre_producto;
+				printf("Producto encontrado: %s - %d unidades en stock.\n", Informatica[i].nombre, Informatica[i].cantidad_stock);
 
-			printf("¿Que producto quiere reabastecer?\n");
-			scanf(" %s", nombre_producto);
-			 if (strcmp(nombre_producto, Informatica[i].nombre) == 0) {
-				 //Informatica[i].nombre = nombre_producto;
-				             printf("Producto encontrado: %s - %d unidades en stock.\n", Informatica[i].nombre, Informatica[i].cantidad_stock);
+				printf("¿Que cantidad quiere añadir de %s?\n",Informatica[i].nombre);
+				scanf(" %d", &agregar_cant);
 
-			printf("¿Que cantidad quiere añadir de %s?\n",Informatica[i].nombre);
-			scanf(" %d", &agregar_cant);
+				Informatica[i].cantidad_stock += agregar_cant;
+				printf("El producto ha sido actualizado, la nueva cantidad en stock es: %d\n", Informatica[i].cantidad_stock);
 
-			Informatica[i].cantidad_stock += agregar_cant;
-			printf("El producto ha sido actualizado, la nueva cantidad en stock es: %d\n", Informatica[i].cantidad_stock);
+				printf("Si desea reabastecer otro producto, pulse 1, si no pulse 2:\n");
+				scanf(" %d", &reabastecer);
+				if (reabastecer != 1){
 
-			printf("Si desea reabastecer otro producto, pulse 1, si no pulse 2:\n");
-			scanf(" %d", &reabastecer);
+					printf("Perfecto, hasta la proxima!\n");
+				}
+				break; //Este break lo ponemos para que si encuentra el producto que queremos modificar no siga dando vueltas comparando con el resto de productos.
+			}
 		}
+	}
+
+
+	printf("Productos en baja existencia\n");
+	for(i = 0; i < cantidad_productos; i++){
+		if(Informatica[i].cantidad_stock < EXIST_MIN){
+			printf("%s - %d unidades\n", Informatica[i].nombre, Informatica[i].cantidad_stock);
 		}
-		}while(reabastecer == 1);
-				
-
-		//}if (reabastecer == 1){
-			//int encontrado = 0;//Usamos esta variable como indicador para saber si el producto fue encontrado en el inventario o no
-		//}if(strcmp(nombre_producto, Informatica[i].nombre) == 0){ //Aqui usamos el strcmp para comparar el nombre del producto en el inventario, con el nombre ingresado por el usuario
-												//Si nos devuelve un 0, significa que las cadenas son iguales,
-
-
-			//encontrado = 1;//
-		//}break;//Ponemos el break para que se termine el bucle una vezencontrado y actualizado el producto
-		
-
-	//printf("Inventario actualizado:\n");
-	/*for (i = 0; i < cantidad_productos; i++){
-		printf("Producto %d: %s - %d unidades\n", i + 1, Informatica[i].nombre, Informatica[i].cantidad_stock);
 	}
-	if (reaastecer < 1 || reabastecer > 2){
-		printf("Valor introducido no valido\n");
-	}
-	if (reabastecer == 2){
-		printf("Vale");	
-	}*/	
 
 	return 0;
-	}
+}
 
 
 

@@ -3,7 +3,12 @@
 #include <string.h>
 #define PRODUCTO_MAX 10
 #define EXIST_MIN 5
-
+/*
+Autores: Marcos Escamilla Ojeda, Jose María de Lucas Plata y Iulian Dragoi
+Asignatura: Programación
+Desarrollo de Aplicaciones Multiplataforma
+Practica 5_3
+*/
 struct Productos{
 	char nombre[20];
 	int cantidad_stock;
@@ -24,12 +29,12 @@ int main(){
 	struct Productos Informatica[cantidad_productos];
 
 	for(i = 0; i < cantidad_productos; i++){
-		printf("Producto %d\n", i + 1);
+		printf("Producto %d\n", i + 1);//Este bucle nos preguntará tantos productos como nosotros hayamos indicado que queremos gestionar
 
-		printf("Nombre: ");
+		printf("Nombre: ")
 		scanf(" %[^\n]", Informatica[i].nombre); //Con %[^\n] permitimos introducir un nombre usando espacios, dejamos un espacio antes de 
 							 //'%' para evitar errores.
-
+		//Aqui el usuario ingresara el nombre y la cantidad del producto
 		printf("Cantidad: ");
 		scanf(" %d",&Informatica[i].cantidad_stock);
 	}
@@ -45,23 +50,23 @@ int main(){
 		printf("Perfecto, hasta la proxima!\n"); // retornamos 1 si es distinto de 1, asi sale del programa.
 	}
 
-	while(reabastecer == 1){ //Haacemos un bucle while y no un do while para que primero lea la condicion, antes que las instrucciones.
+	while(reabastecer == 1){ //Hacemos un bucle while y no un do while para que primero lea la condicion, antes que las instrucciones.
 
 		printf("¿Que producto quiere reabastecer?\n");
 		scanf(" %[^\n]", nombre_producto);
 
 		for(i = 0; i < cantidad_productos; i++){
 
-			if (strcmp(nombre_producto, Informatica[i].nombre) == 0) {
+			if (strcmp(nombre_producto, Informatica[i].nombre) == 0) {//Comparamos el producto introducido por el usuario con el producto ya almacenado
 				printf("Producto encontrado: %s - %d unidades en stock.\n", Informatica[i].nombre, Informatica[i].cantidad_stock);
 
 				printf("¿Que cantidad quiere añadir de %s?\n",Informatica[i].nombre);
 				scanf(" %d", &agregar_cant);
 
-				Informatica[i].cantidad_stock += agregar_cant;
-				printf("El producto ha sido actualizado, la nueva cantidad en stock es: %d\n", Informatica[i].cantidad_stock);
+				Informatica[i].cantidad_stock += agregar_cant;//Para que se le sume a la cantidad de stock la cantidad agregada por el usuario
+				printf("El producto ha sido actualizado, la nueva cantidad en stock es: %d\n", Informatica[i].cantidad_stock);//actualizamos stock
 
-				printf("Si desea reabastecer otro producto, pulse 1, si no pulse 2:\n");
+				printf("Si desea reabastecer otro producto, pulse 1, si no pulse 2:\n");//Preguntamos de nuevo
 				scanf(" %d", &reabastecer);
 				if (reabastecer != 1){
 

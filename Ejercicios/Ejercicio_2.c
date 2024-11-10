@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<string.h>
+/*
+ * Autores: Marcos Escamilla Ojeda, Jose Maria De Lucas Plata, Iulian Dragoi.
+ * Asignatura: Programación.
+ * Desarrollo de Aplicaciones Multiplatforma.
+ * Practica 5_Ejercicio_2
+ */
 
 
 

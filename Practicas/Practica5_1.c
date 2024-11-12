@@ -2,6 +2,12 @@
 #include<stdlib.h>
 
 int main(){
+	/*
+	 * Autor: Marcos Escamilla, Jose María de Lucas, Iulian Dragoi
+	 * Asignatura: Programación
+	 * Desarrollo de Aplicaciones Multiplataforma
+	 * Practica 5_1
+	 * */
 
 	float promedio = 0, maxima, minima;
 	int contador;

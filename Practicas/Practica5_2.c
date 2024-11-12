@@ -1,7 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define NOTA_MINIMA 5.00
-
+/*
+ * Autores: Marcos Escamilla, Jose Maria de Lucas , Iulian Dragoi
+ * Asignatura: Programación
+ * Desarrollo de Aplicaciones Multipilataforma
+ * Practica 5_2
+ * */
 struct Estudiante{
 	char nombre[50];	//*Declaro un struct con los valores que quiero que guarde de cada estudiante
 	float nota_final;

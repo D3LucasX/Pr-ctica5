@@ -28,9 +28,10 @@ int main(){
 		}
 
 		if(con_a == 1){	 // si la variable con_a es igual a 1, continue, por lo que saltara esa palabra.
-			continue;
-		}
+
 		printf(" %s\n", lista_palabras[i]);
+		
+		}
 	}
 }
 

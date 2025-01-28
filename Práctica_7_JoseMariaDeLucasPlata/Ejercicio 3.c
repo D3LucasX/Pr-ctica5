@@ -13,56 +13,7 @@ int main (){
 	int x = columnas / 2;
 	int y = filas / 2;
 	char movimiento = 'n';
-	/*do
-	{
-
-		for (int i = 0; i < filas ; i++){
-			for(int j = 0; j < columnas; j++){
-				if (i == y && j == x){
-					tablero[i][j] = '#';
-				}else if(i == 0 || i == filas-1 || j == 0 || j == columnas-1){
-					tablero[i][j] = '*';
-				}else{
-					tablero[i][j] = ' ';
-				}
-				printf(" %c", tablero[i][j]);
-			}
-			printf("\n");
-		}
-		scanf(" %c", &movimiento);
-		system("clear");
-		switch (movimiento){
-		case 'w':
-			if (y-1==0){
-			}else{
-				y -= 1;
-			}
-			break;
-
-		case 'a':
-			if (x-1==0){
-			}else{
-				x -= 1;
-			}
-			break;
-
-		case 'd':
-			if (x+1 == columnas -1){
-			}else{
-				x += 1;
-			}
-			break;
-
-		case 's':
-			if(y+1 == filas -1){
-			}else{
-				y += 1;
-			}
-			break;
-		default:
-			break;
-		}
-	}while(movimiento != 'q');*/
+	
 	 // Llenar el tablero con espacios
 	while (movimiento != 'q'){
     for (int i = 0; i < 10; i++) {

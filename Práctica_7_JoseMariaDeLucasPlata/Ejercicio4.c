@@ -6,7 +6,7 @@
 /*
  *
  * 	Autor: Jose Maria De Lucas Plata.
- *
+ *	        Marcos Escamilla Ojeda.
  */
 void esPalindromo(char* cadena, int tamaño){
     tamaño = tamaño - 1; // quitamos el \0.
@@ -20,13 +20,16 @@ void esPalindromo(char* cadena, int tamaño){
         return;
     }
 
-    if (tolower(cadena[0]) == tolower(cadena[tamaño])){
+    if (tolower(cadena[0]) == tolower(cadena[tamaño])){ // tolower a la hora de comparar dos caracteres
+							// no hace distincion entre si está en mayúsculas o 
+							// minúsculas.
 
-        esPalindromo(cadena +1, tamaño-1);
+        esPalindromo(cadena +1, tamaño-1); // Acotamos el rango de comparacion en la nueva llamada 
+					   // recursiva a la función.
 
     }else{
         
-        printf("No es u palíndromo.\n");
+        printf("No es u palíndromo.\n"); 
     }
 }
 

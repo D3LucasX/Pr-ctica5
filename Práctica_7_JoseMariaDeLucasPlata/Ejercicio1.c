@@ -5,7 +5,7 @@
 /*
  *
  * 	Autor: Jose Maria De Lucas Plata.
- *
+ *              Marcos Escamilla Ojeda.
  */
 void CantidadNumeros(int* total_numeros);
 void PedirNumeros(int* numerosAordenar, int total_numeros);
@@ -16,12 +16,14 @@ int main (){
 	int total_numeros;
 	printf("Bienvenido\n"); 
 	int* numerosAordenar = NULL; // La inicializamos a NULL, para que luego en la condición dentro del do,
-								 // si la variable no esta inicializada, que haga un malloc, y si esta 
-								 // inicializada que haga un realloc.
+				     // si la variable no esta inicializada, que haga un malloc, y si esta 
+				     // inicializada que haga un realloc.
 
 	do{
-		CantidadNumeros(&total_numeros);
-		if (numerosAordenar == NULL){
+		CantidadNumeros(&total_numeros); // Pasamos por referencia el total de números que vamos a ordenar.
+		if (numerosAordenar == NULL){    // Al entrar al do por primera vez, numerosAordenar es == NULL, así que hara el malloc.
+						 // Si se cumple la condición del while, al entrar en el do otra vez, numerosAordenar no sera
+						 // igual a NULL, por lo que se hara el realloc.
 			numerosAordenar = (int *) malloc (total_numeros * sizeof(int));
 			if(numerosAordenar == NULL){
     		printf("ERROR, NO HAY MEMORIA\n");
@@ -38,7 +40,7 @@ int main (){
 	while (strcmp(volverAcomparar, "si") == 0);
 
 
-	free (numerosAordenar);
+	free (numerosAordenar); // Liberamos memoria.
 	return EXIT_SUCCESS;
 
 }
@@ -60,7 +62,14 @@ void PedirNumeros(int* numerosAordenar, int total_numeros){
 void OrdenarNumeros(int* numerosAordenar, int total_numeros){
 	int i,j, box;
 	for(i = 0; i < total_numeros ; i++){
-		
+
+			// Ordenamos de mayor a menor, de tal manera, que en la primera vuelta
+			// de el segundo bucle, ya habremos sacado el numero mas grande, que lo guardaremos
+			// en la primera posición, en la segunda vuelta empezaremos a comparar a poartir 
+			// de la siguiente, por lo que ese nprimer número ya no lo tocaremos más,
+			// y en las siguientes vueltas pasara lo mismo.
+			
+
 			for(j = i + 1; j < total_numeros ; j++){
 				if (numerosAordenar[i] < numerosAordenar[j]){
 					box = numerosAordenar[i];

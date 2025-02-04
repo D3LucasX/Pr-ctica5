@@ -47,6 +47,7 @@ for (int i = 0; i < total_est; ++i)
 }
 
 
+
 free(estudiante);
 
 return 0;

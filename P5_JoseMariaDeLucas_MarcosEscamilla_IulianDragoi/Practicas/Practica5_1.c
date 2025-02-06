@@ -72,12 +72,12 @@ int main(){
 			dia_minima = contador;
 		}
 	}
-
+	
 	// Y con la temperatura minima hacemos lo mismo, que hemos hecho 
 	// en la temperatura maxima, solo que modificamos al reves la condición.
 	
 	  printf("La temperatura máxima sera el dia %s con %.2f grados\n", Dias_semana[dia_maxima],  maxima);
-
+			
 	  // Aqui es donde llamamos al dia de la semana utilizando el array
 	  // de Dias_semana[dia_maxima], donde dia_maxima alberga el valor 
 	  // que tenia contador cuando se cumplio la condicion del

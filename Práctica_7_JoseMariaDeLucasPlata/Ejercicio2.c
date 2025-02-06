@@ -88,7 +88,6 @@ for (int i = 0; i < total_est; ++i)
 	 printf("Estudiante %d: %s %s, Nota: %.2f\n", i+1, estudiante[i].nombre, estudiante[i].apellido, estudiante[i].nota);
 }
 
-
 qsort(estudiante,total_est,sizeof(Estudiante), CompararNota);//Exactamente igual que en qsort de arriba, solo que cambiando la funcion por la de comparar la nota
 
 printf("\n Estudiantes ordenados por nota (mayor a menor):\n");
@@ -96,7 +95,6 @@ for (int i = 0; i < total_est; ++i)
 {
        printf("Estudiante %d: %s %s, Nota: %.2f\n", i +1, estudiante[i].nombre, estudiante[i].apellido, estudiante[i].nota);
 }
-
 
 free(estudiante);
 

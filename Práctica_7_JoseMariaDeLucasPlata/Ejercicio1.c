@@ -9,8 +9,10 @@
  */
 //Funcion para preguntar cuántos numeros va a ordenar el usuario
 void CantidadNumeros(int* total_numeros);
+
 // Función para pedirle los números al usuario y guardarlos en un array
 void PedirNumeros(int* numerosAordenar, int total_numeros);
+
 // Función para ordenar los números de mayor a menor
 void OrdenarNumeros(int* numerosAordenar, int total_numeros);
 

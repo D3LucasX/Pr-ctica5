@@ -22,13 +22,9 @@ int main (){
     //rellenamos tablero con espacios en blanco y colocamos el jugador '#'
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
-<<<<<<< HEAD
+
         	if (i == y &&  j == x){//si es la posicion del jugador, es x 
         	tablero[i][j] = '#';
-=======
-        	if (i == y &&  j == x){
-        	tablero[i][j] = '#'; // Se pondra en el centro.
->>>>>>> e9a467092c8d7263022fde3e97de6c0ce451cc65
         	}else{
             tablero[i][j] = ' ';  // Espacio vacío
         	}

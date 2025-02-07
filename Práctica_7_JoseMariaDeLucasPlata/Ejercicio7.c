@@ -3,14 +3,9 @@
 
 /*
  *
-<<<<<<< HEAD
  * 	Autores: Jose Maria De Lucas Plata,
  			  Marcos Escamilla Ojeda.
  *
-=======
- * 	Autor: Jose Maria De Lucas Plata.
- *     	        Marcos Escamilla Ojeda.
->>>>>>> e9a467092c8d7263022fde3e97de6c0ce451cc65
  */
 
 

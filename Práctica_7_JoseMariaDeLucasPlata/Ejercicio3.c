@@ -20,7 +20,7 @@ int main (){
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
         	if (i == y &&  j == x){
-        	tablero[i][j] = '#';
+        	tablero[i][j] = '#'; // Se pondra en el centro.
         	}else{
             tablero[i][j] = ' ';  // Espacio vacío
         	}
@@ -49,22 +49,22 @@ int main (){
     scanf(" %c", &movimiento);
     if(movimiento == 'w' && y > 1){
     	y--;  // Si marcamos la 'w' avanzara una fila hacia adelante
-	      // hasta que llegue a la fila 1, que como no va a ser mayo, no se va a mover haca 
-	      // arriba.
+	          // hasta que llegue a la fila 1, que como no va a ser mayor, no se va a mover haca 
+	          // arriba.
     }else if(movimiento == 's' && y < 8){
     	y++;  // Si marcamos la 's', retrocedera una fila hacia abajo,
-	      // hasta que y < 8, que cuando llegue ahi, como no va a ser 
-	      // menor, no se moverá más hacia abajo.
+	          // hasta que y < 8, que cuando llegue ahi, como no va a ser 
+	          // menor, no se moverá más hacia abajo.
     }else if(movimiento == 'a' && x > 1){
     	x--;  // Si marcamos la 'a' se movera hacia la izquierda hasta que 
-	      // este en la posicion 1, cuando llegue ahi,
-	      // al no ser menor que 1, no sse desplazara mas columnas
-	      // hacia la izquierda.
+	          // este en la posicion 1, cuando llegue ahi,
+	          // al no ser menor que 1, no sse desplazara mas columnas
+	          // hacia la izquierda.
     }else if (movimiento == 'd' && x < 8){
     	x++;  // Si marcamos la 'd', se movera el cursor hacia la derecha,
-	      // hasta que x sea 8, ya que cuando llegue ahí,
-	      // no va a ser menor, asi que no se movera más columnas 
-	      // hacia la derecha.
+	          // hasta que x sea 8, ya que cuando llegue ahí,
+	          // no va a ser menor, asi que no se movera más columnas 
+	          // hacia la derecha.
     }
 
     if (y == 5 && x == 8){ // Tonterias mías.

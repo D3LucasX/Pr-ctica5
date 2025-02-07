@@ -55,14 +55,23 @@ free(arrayPrimos);
 
 int * EsPrimo(int num, int* contador){
 	int* arrayPrimos = (int*) malloc (sizeof(int));
+	// Reservamos memoria para un int.
 
 	arrayPrimos[0] = 2;
+	// Inicializamos la primera posición del array con 2,
+	// que es el primer número primo.
 	*contador = 1;
+	// Inicializamos el contenido de contador a 1.
 
 	for (int i = 3 ; i <= num; i++){
-		int esPrimo = 1;
+	// Bucle for que recorre los números desde el principio hasta
+	// el número que nos indicó el usuario.
+		int esPrimo = 1; 
+		// Variable bandera, si es uno es verdadero, si es 0 es falso.
+		// Partimos de la base de que es verdadero.
 
 		for(int j = 2; j * j <= i; j++){
+		// Comprobamos si es primo con 
 			if(i % j == 0){
 				esPrimo = 0;
 				break;
@@ -73,6 +82,7 @@ int * EsPrimo(int num, int* contador){
 				int* temp = (int*) realloc(arrayPrimos, *contador * sizeof(int));
 				if(temp == NULL){
 					printf("No hay memoria\n");
+					free(arrayPrimos);
 					exit(1);
 				}
 				arrayPrimos = temp;

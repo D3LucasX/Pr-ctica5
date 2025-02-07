@@ -8,8 +8,53 @@
  */
 
 
+int * EsPrimo(int num, int* contador);
+
+int main (){
+
+	int num = 0;
+	int contador = 0;
+
+	while (num <= 1){
+		printf("Dame un número mayor que 1 \n");
+		scanf("%d", &num);
+	}
+
+	int* array = (int*) malloc (num * sizeof(int));
+
+	if (array == NULL)
+	{
+		printf("Error al asignar memoria.\n");
+		return 1;
+	}
+	printf("Lista de números proporcionados por el usuario.\n");
+	for(int i = 0; i < num; i++){
+		array[i] = i;
+	}
+
+	for(int i = 0; i < num; i++ ){
+		printf("%d - ", array[i]);
+
+	}
+	printf("\n");
+	
+	printf("Este es el array de números primos.\n");
+	int * arrayPrimos = EsPrimo(num, &contador);
+
+	for (int i = 0; i < contador; i++){
+		printf("%d - ", arrayPrimos[i]);
+	}
+	printf("\n");
+
+
+free(array);
+free(arrayPrimos);
+	return 0;
+
+}
+
 int * EsPrimo(int num, int* contador){
-	int* arrayPrimos = (int*) malloc (*contador * sizeof(int));
+	int* arrayPrimos = (int*) malloc (sizeof(int));
 
 	arrayPrimos[0] = 2;
 	*contador = 1;
@@ -35,50 +80,5 @@ int * EsPrimo(int num, int* contador){
 		}
 	}
 	return arrayPrimos;
-
-}
-
-int main (){
-
-	int num = 0;
-	int contador = 0;
-
-	while (num <= 1){
-		printf("Dame un número mayor que 1 \n");
-		scanf("%d", &num);
-	}
-
-	int* array = (int*) malloc (num * sizeof(int));
-
-	if (array == NULL)
-	{
-		printf("Error al asignar memoria.\n");
-		return 1;
-	}
-	printf("Lista de números proporcionados por el usuario.\n")
-	for(int i = 0; i < num; i++){
-		array[i] = i;
-	}
-
-	for(int i = 0; i < num; i++ ){
-		printf("%d - ", array[i]);
-
-	}
-	int* arrayPrimos = (int*) malloc (*contador * sizeof(int));
-	if(arrayPrimos == NULL){
-		printf("No hay memoria\n");
-		return EXIT_FAILURE;
-	}
-	printf("Este es el array de números primos.\n");
-	int * arrayPrimos = esPrimo(num, &contador);
-	for (int i = 0; i < contador; i++){
-		printf("%d - ", arrayPrimos[i]);
-	}
-	printf("\n");
-
-
-free(array);
-free(arrayPrimos);
-	return 0;
 
 }

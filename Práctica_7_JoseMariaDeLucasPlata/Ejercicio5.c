@@ -3,8 +3,8 @@
 
 /*
  *
- * 	Autor: Jose Maria De Lucas Plata.
- *     	        Marcos Escamilla Ojeda.
+ * 	Autores: Jose Maria De Lucas Plata.
+ *     	     Marcos Escamilla Ojeda.
  */
 int main (){
 

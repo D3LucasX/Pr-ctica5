@@ -8,18 +8,21 @@
  *
  */
 int main (){
+    //Definimos tablero de 10x10 y las variables
 	char tablero[10][10];
 	int columnas = 10;
 	int filas = 10;
 	int x = columnas / 2;
 	int y = filas / 2;
-	char movimiento = 'n';
+	char movimiento = 'n';//Inicializamos con valor cualquiera
 	
 	 // Llenar el tablero con espacios
-	while (movimiento != 'q'){
+	while (movimiento != 'q'){//Se ejecuta hasta que el usuario presione 'q'
+
+    //rellenamos tablero con espacios en blanco y colocamos el jugador '#'
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
-        	if (i == y &&  j == x){
+        	if (i == y &&  j == x){//si es la posicion del jugador, es x 
         	tablero[i][j] = '#';
         	}else{
             tablero[i][j] = ' ';  // Espacio vacío

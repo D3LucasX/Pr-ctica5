@@ -19,7 +19,7 @@ typedef struct
 
 
 //Función para introducir el número de estudiantes que quieres agregar
-void EstudiantesIntroducir(int *total_est){ //total_est lo tengo que pasar por referencia
+void EstudiantesIntroducir(int *total_est){ //total_est lo tengo que pasar por referencia, lo que me permite modificar directamente en el main
 
 printf("¿Cuántos estudiantes quieres introducir?\n");
 scanf("%d", total_est);//Leemos el numero de estudiantes
@@ -79,7 +79,7 @@ if (estudiante == NULL) {
     return 1;
 }
 
- for (int i = 0; i < total_est; i++) {
+ for (int i = 0; i < total_est; i++) {//bucle que recorre todos los estudiantes para introducir todos sus datos
         printf("Introduce los datos del estudiante %d:\n", i + 1);
         printf("Nombre: ");
         scanf("%s", estudiante[i].nombre);

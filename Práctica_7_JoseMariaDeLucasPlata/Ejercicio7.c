@@ -3,9 +3,14 @@
 
 /*
  *
+<<<<<<< HEAD
  * 	Autores: Jose Maria De Lucas Plata,
  			  Marcos Escamilla Ojeda.
  *
+=======
+ * 	Autor: Jose Maria De Lucas Plata.
+ *     	        Marcos Escamilla Ojeda.
+>>>>>>> e9a467092c8d7263022fde3e97de6c0ce451cc65
  */
 
 
@@ -22,7 +27,7 @@ int main (){
 	}
 
 	int* array = (int*) malloc (num * sizeof(int));
-	// Array con los valores que ha indicado el Usuario.
+	// Reserva de memoria para el Array con los valores que ha indicado el Usuario.
 
 	if (array == NULL){
 		printf("Error al asignar memoria.\n");
@@ -35,26 +40,32 @@ int main (){
 	}
 
 	for(int i = 0; i < num; i++ ){
-		printf("%d - ", array[i]);
-
+		printf("%d", array[i]);
+		if (i < num - 1){
+			printf(" - ");
+		}
 	}
 	printf("\n");
 	
 	printf("Este es el array de números primos.\n");
 	int * arrayPrimos = EsPrimo(num, &contador);
+	// Inicializamos El array con los números primos.
 
 	for (int i = 0; i < contador; i++){
-		printf("%d - ", arrayPrimos[i]);
+		printf("%d", arrayPrimos[i]);
+		if (i < contador - 1){
+			printf(" - ");
+		}
 	}
 	printf("\n");
 
-
+// Liberamos memoria,.
 free(array);
 free(arrayPrimos);
 	return 0;
 
 }
-
+// Función para saber que números de la lista son primos y guardarlos en otro array.
 int * EsPrimo(int num, int* contador){
 	int* arrayPrimos = (int*) malloc (sizeof(int));
 	// Reservamos memoria para un int.

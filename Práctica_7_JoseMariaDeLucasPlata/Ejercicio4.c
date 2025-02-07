@@ -21,11 +21,11 @@ void esPalindromo(char* cadena, int tamaño){
     }
 
     if (tolower(cadena[0]) == tolower(cadena[tamaño])){ // tolower a la hora de comparar dos caracteres
-							// no hace distincion entre si está en mayúsculas o 
-							// minúsculas.
+							                            // no hace distincion entre si está en mayúsculas o 
+							                            // minúsculas.
 
         esPalindromo(cadena +1, tamaño-1); // Acotamos el rango de comparacion en la nueva llamada 
-					   // recursiva a la función.
+					                       // recursiva a la función.
 
     }else{
         

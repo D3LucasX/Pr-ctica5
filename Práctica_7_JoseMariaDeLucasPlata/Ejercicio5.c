@@ -8,14 +8,13 @@
  */
 int main (){
 
-	int n = 3; //filas
-	int m = 3; // columnas
+	int n = 3; // Filas
+	int m = 3; // Columnas
 	int arr[n][m];
 	int suma = 0;
-	int temp = 0;
 	int aumento = 2;
 
-	//Rellenar los numeros de la matriz.
+	// Rellenar los numeros de la matriz.
 	for (int i = 0; i < n  ; i++){
 		for (int j = 0; j < m  ; j++){
 			arr[i][j] = aumento;
@@ -25,7 +24,7 @@ int main (){
 		printf("\n");
 	}
 
-	//Sumar los numeros del contorno.
+	// Sumar los numeros del contorno.
 	for (int i = 0; i < n  ; i++){
 		for (int j = 0; j < m  ; j++){
 			if (i == 0 || i == n -1 || j == 0 || j == m -1){

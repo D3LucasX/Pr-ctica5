@@ -8,7 +8,34 @@
  * 	Autor: Jose Maria De Lucas Plata.
  *	        Marcos Escamilla Ojeda.
  */
+<<<<<<< HEAD
+void esPalindromo(char* cadena, int tamaño){
+    tamaño = tamaño - 1; // quitamos el \0.
+
+    if (tamaño <= 1){  // Caso base. Cuando el tamaño, sea < que uno o igual a uno, saldra,
+                       // porque eso indicara o que la palabra que queda ya no tiene con quien
+                       // compararse, o que ya no hay mas palabras y por lo tanto todas las 
+                       // comparaciones han sido validas.
+        
+        printf("Es un palíndromo\n"); 
+    }
+
+    if (tolower(cadena[0]) == tolower(cadena[tamaño])){ // tolower a la hora de comparar dos caracteres
+							// no hace distincion entre si está en mayúsculas o 
+							// minúsculas.
+
+        esPalindromo(cadena +1, tamaño-1); // Acotamos el rango de comparacion en la nueva llamada 
+					   // recursiva a la función.
+
+    }else{
+        
+        printf("No es u palíndromo.\n"); 
+	return;
+    }
+}
+=======
 void esPalindromo(char* cadena, int tamaño);
+>>>>>>> 86640704421a92ae0d629ee639f3e02599864e9a
 
 int main (){
 char cadena[50];

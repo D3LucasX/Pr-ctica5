@@ -8,7 +8,7 @@
  * 	Autor: Jose Maria De Lucas Plata.
  *	        Marcos Escamilla Ojeda.
  */
-<<<<<<< HEAD
+
 void esPalindromo(char* cadena, int tamaño){
     tamaño = tamaño - 1; // quitamos el \0.
 
@@ -33,9 +33,9 @@ void esPalindromo(char* cadena, int tamaño){
 	return;
     }
 }
-=======
+
 void esPalindromo(char* cadena, int tamaño);
->>>>>>> 86640704421a92ae0d629ee639f3e02599864e9a
+
 
 int main (){
 char cadena[50];

@@ -17,7 +17,6 @@ void esPalindromo(char* cadena, int tamaño){
                        // comparaciones han sido validas.
         
         printf("Es un palíndromo\n"); 
-        return;
     }
 
     if (tolower(cadena[0]) == tolower(cadena[tamaño])){ // tolower a la hora de comparar dos caracteres
@@ -30,6 +29,7 @@ void esPalindromo(char* cadena, int tamaño){
     }else{
         
         printf("No es u palíndromo.\n"); 
+	return;
     }
 }
 

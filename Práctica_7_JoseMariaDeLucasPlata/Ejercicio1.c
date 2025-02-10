@@ -7,13 +7,18 @@
  * 	Autor: Jose Maria De Lucas Plata.
  *              Marcos Escamilla Ojeda.
  */
+//Funcion para preguntar cuántos numeros va a ordenar el usuario
 void CantidadNumeros(int* total_numeros);
+
+// Función para pedirle los números al usuario y guardarlos en un array
 void PedirNumeros(int* numerosAordenar, int total_numeros);
+
+// Función para ordenar los números de mayor a menor
 void OrdenarNumeros(int* numerosAordenar, int total_numeros);
 
 int main (){
-	char volverAcomparar [2];
-	int total_numeros;
+	char volverAcomparar [2];//Variable para saber si el usuario quiere repetir
+	int total_numeros;//Cantidad de numeros a ordenar
 	printf("Bienvenido\n"); 
 	int* numerosAordenar = NULL; // La inicializamos a NULL, para que luego en la condición dentro del do,
 				     // si la variable no esta inicializada, que haga un malloc, y si esta 
@@ -29,15 +34,16 @@ int main (){
     		printf("ERROR, NO HAY MEMORIA\n");
     		return EXIT_FAILURE;
     		} //Si no hay espacio para hacer la reserva de la memória, entonces se cancelara.
-		}else if (numerosAordenar != NULL){
+		}else if (numerosAordenar != NULL){//Comprobamos si el realloc ha fallado
 			numerosAordenar = (int*) realloc(numerosAordenar,(total_numeros * sizeof(int)));
 		}
-		PedirNumeros(numerosAordenar, total_numeros);
-		OrdenarNumeros(numerosAordenar, total_numeros);
+
+		PedirNumeros(numerosAordenar, total_numeros);//Pedimos los numeros al usuario
+		OrdenarNumeros(numerosAordenar, total_numeros);//Los ordenamos de mayor a menor
 		printf("¿Desea volver a comparar una serie de números?");
 		scanf(" %[^\n]", volverAcomparar);
 	}
-	while (strcmp(volverAcomparar, "si") == 0);
+	while (strcmp(volverAcomparar, "si") == 0);//Si contesta con si, repetimos el proceso
 
 
 	free (numerosAordenar); // Liberamos memoria.
@@ -45,20 +51,23 @@ int main (){
 
 }
 
+//Funcion que pregunta al usuario cuantos numeros quiere ordenar
 void CantidadNumeros(int* total_numeros){
 
-
 	printf("¿Cuantos números desea ordenar?.\n");
-	scanf(" %d", total_numeros);
+	scanf(" %d", total_numeros);//los guardamos en la variable
 	printf("El total de números es %d\n", *total_numeros);
 }
+//Funcion que pide al usuario que introduzca los numeros 1 por 1
 void PedirNumeros(int* numerosAordenar, int total_numeros){
 	int i = 0;
 	printf("Introduzca la serie de números de uno en uno.\n");
 	for (i = 0; i < total_numeros ; i++){
-		scanf("%d", &numerosAordenar[i]);
+		scanf("%d", &numerosAordenar[i]);//Guardamos cada numero en el array
 	}
 }
+
+//Funcion que ordena los numeros de mayor a menor
 void OrdenarNumeros(int* numerosAordenar, int total_numeros){
 	int i,j, box;
 	for(i = 0; i < total_numeros ; i++){
@@ -80,6 +89,6 @@ void OrdenarNumeros(int* numerosAordenar, int total_numeros){
 			//printf("%dº - %d , ", i +1, numerosAordenar[i]);
 		}	
 		for (i = 0 ; i < total_numeros; i++){
-		printf(" %d\n",numerosAordenar[i]);
+		printf(" %d\n",numerosAordenar[i]);//Imprimimos numeros ordenados ya
 	}
 	}

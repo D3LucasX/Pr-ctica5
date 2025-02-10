@@ -80,7 +80,9 @@ void OrdenarNumeros(int* numerosAordenar, int total_numeros){
 			
 
 			for(j = i + 1; j < total_numeros ; j++){
+
 				if (numerosAordenar[i] < numerosAordenar[j]){
+
 					box = numerosAordenar[i];
 					numerosAordenar[i] = numerosAordenar[j];
 					numerosAordenar[j] = box;

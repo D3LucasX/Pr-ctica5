@@ -62,7 +62,11 @@ if (estudiante == NULL) {
 
 
 
-qsort(estudiante/*puntero al primer elemento del array que queremos ordenar*/,total_est/*numero total de elementos, cuantos elementos queremos ordenar*/,sizeof(Estudiante)/*tamaño de cada elemento del array, le permite a qsort saber cuanto espacio ocupa cada struct para poder desplazarse de un elemento al siguiente*/,CompararApellido/*funcion que se encarga de comparar dos elementos del array*/);
+qsort(
+       estudiante/*puntero al primer elemento del array que queremos ordenar*/,
+       total_est/*numero total de elementos, cuantos elementos queremos ordenar*/,
+       sizeof(Estudiante)/*tamaño de cada elemento del array, le permite a qsort saber cuanto espacio ocupa cada struct para poder desplazarse de un elemento al siguiente*/,
+       CompararApellido/*funcion que se encarga de comparar dos elementos del array*/);
 
 printf("Estudiantes ordenados por apellido(alfabeticamente):\n");
 for (int i = 0; i < total_est; ++i)

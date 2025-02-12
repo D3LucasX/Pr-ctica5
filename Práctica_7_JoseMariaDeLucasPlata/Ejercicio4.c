@@ -36,7 +36,7 @@ void esPalindromo(char* cadena, int tamaño){
 
 
 void esPalindromo(char* cadena, int tamaño){
-
+// Creo que esta es la buena.
 
     if (tamaño <= 1){  // Caso base. Cuando el tamaño, sea < que uno o igual a uno, saldra,
                        // porque eso indicara o que la palabra que queda ya no tiene con quien
